@@ -87,6 +87,7 @@ ENV DOCKER_BUCKET="get.docker.com" \
     DOCKER_COMPOSE_VERSION="1.16.1"
 
 COPY dockerd-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/dockerd-entrypoint.sh  # https://github.com/moby/moby/issues/27182
 
 # From the docker:1.12
 RUN set -x \
